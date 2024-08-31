@@ -9,7 +9,7 @@ class AppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ThemeSwitcher(
-      clipper: const ThemeSwitcherCircleClipper(),
+      clipper:const ThemeSwitcherCircleClipper(),
       builder: (context) {
         return IconButton(
           icon: Icon(

@@ -11,7 +11,30 @@ sealed class CalculatorState extends Equatable {
 
 final class CalculatorInitial extends CalculatorState {
 
-  List<String> symbols = [
+  List<String> symbolsL = [
+    '1',
+    '2',
+    '3',
+    '.',
+    '*/-',
+    '+',
+    '-',
+    '4',
+    '5',
+    '6',
+    '0',
+    '%',
+    '*',
+    '/',
+    '7',
+    '8',
+    '9',
+    'D',
+    'C',
+    '=',
+  ];
+
+  List<String> symbolsP = [
     'C',
     '*/-',
     '%',
@@ -33,7 +56,9 @@ final class CalculatorInitial extends CalculatorState {
     'D',
     '=',
   ];
-  Color myBackgroundColor(String x,BuildContext context) {
+
+
+  Color myBackgroundColor(String x,BuildContext context ) {
 
     if (x == '/' || x == '+' || x == '*' || x == '-' || x == '=') {
       return ThemeModelInheritedNotifier.of(context).theme.brightness ==Brightness.light ? buttonLightHigh : buttonDarkHigh;
@@ -46,7 +71,7 @@ final class CalculatorInitial extends CalculatorState {
     }
   }
 
-  Color myTextColor(String x,BuildContext context) {
+  Color myTextColor(String x,BuildContext context ) {
 
     if (
         x == '/' ||
@@ -66,8 +91,30 @@ final class CalculatorInitial extends CalculatorState {
 class CalculatorInProgressState extends CalculatorState {
   final String input;
   final String output;
+  List<String> symbolsL = [
+    '1',
+    '2',
+    '3',
+    '.',
+    '*/-',
+    '+',
+    '-',
+    '4',
+    '5',
+    '6',
+    '0',
+    '%',
+    '*',
+    '/',
+    '7',
+    '8',
+    '9',
+    'D',
+    'C',
+    '=',
+  ];
 
-  List<String> symbols = [
+  List<String> symbolsP = [
     'C',
     '*/-',
     '%',
@@ -94,7 +141,7 @@ class CalculatorInProgressState extends CalculatorState {
   CalculatorInProgressState(
       {required this.output, required this.input});
 
-  Color myBackgroundColor(String x,BuildContext context) {
+  Color myBackgroundColor(String x,BuildContext context ) {
      
     if (x == '/' || x == '+' || x == '*' || x == '-' || x == '=') {
       return ThemeModelInheritedNotifier.of(context).theme.brightness ==Brightness.light ? buttonLightHigh : buttonDarkHigh;
@@ -107,7 +154,7 @@ class CalculatorInProgressState extends CalculatorState {
     }
   }
 
-  Color myTextColor(String x,BuildContext context) {
+  Color myTextColor(String x,BuildContext context ) {
 
     if (
         x == '/' ||
